@@ -13,7 +13,7 @@
 
 <body>
 
-<div class="app">
+<div class="layout">
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
@@ -43,7 +43,7 @@
 <input placeholder="Search categories...">
 </div>
 
-<div class="top-icons">
+<div class="icons">
 <i class="ri-search-line" onclick="toggleSearch()"></i>
 <i class="ri-user-line"></i>
 <i class="ri-notification-3-line"></i>
@@ -52,83 +52,69 @@
 
 </div>
 
+<!-- CONTENT (THIS WILL 100% SHOW) -->
 <div class="content">
 
-<h1 class="page-title">Dashboard</h1>
+<h1>Dashboard</h1>
 
-<!-- VIP -->
-<div class="vip-box">
-<div class="vip-left">
+<div class="vip">
 <h3>VIP Progress</h3>
 
-<div class="progress-bar">
-<div class="progress-fill" style="width:0%"></div>
+<div class="bar">
+<div class="fill" style="width:0%"></div>
 </div>
 
-<span class="progress-text">0%</span>
+<p>0%</p>
 </div>
 
-<div class="vip-badge"></div>
-</div>
-
-<!-- CHALLENGES -->
-<h2 class="section-title">Live Challenges</h2>
+<h2>Live Challenges</h2>
 
 <div class="cards">
 
 <div class="card">
-<div class="card-top">
 <h3>Fortnite</h3>
-<span class="entry">$5 Entry</span>
-</div>
-<button class="join-btn">Join</button>
+<p>$5 Entry</p>
+<button>Join</button>
 </div>
 
 <div class="card">
-<div class="card-top">
 <h3>Valorant</h3>
-<span class="entry">$5 Entry</span>
-</div>
-<button class="join-btn">Join</button>
+<p>$5 Entry</p>
+<button>Join</button>
 </div>
 
 <div class="card">
-<div class="card-top">
 <h3>Warzone</h3>
-<span class="entry">$5 Entry</span>
-</div>
-<button class="join-btn">Join</button>
-</div>
-
+<p>$5 Entry</p>
+<button>Join</button>
 </div>
 
 </div>
 
 </div>
+
 </div>
 
-<!-- CHAT BUTTON -->
-<div class="chat-btn" onclick="toggleChat()">
-<i class="ri-customer-service-2-line"></i>
 </div>
 
 <!-- CHAT -->
-<div class="chat" id="chat">
-
-<div class="chat-header">
-Support
-<span onclick="toggleChat()">✖</span>
+<div class="chat-btn" onclick="toggleChat()">
+<i class="ri-customer-service-line"></i>
 </div>
 
-<div class="chat-status" id="chatStatus"></div>
+<div class="chat" id="chat">
+<div class="chat-header">
+Support <span onclick="toggleChat()">✖</span>
+</div>
 
-<div class="chat-messages" id="chatMessages"></div>
+<div id="chatStatus"></div>
+
+<div id="chatMessages"></div>
 
 <div class="chat-input">
-<input id="msgInput" placeholder="Type message...">
+<input id="msgInput">
 <button onclick="sendMsg()">Send</button>
 </div>
-
 </div>
 
 </body>
