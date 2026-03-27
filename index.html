@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="./style.css">
 <script src="./script.js" defer></script>
 
-<!-- ICONS -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
 </head>
@@ -19,14 +18,14 @@
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
 
-<img src="./bannerlogo.png" class="logo">
+<img src="./bannerlogo.png" id="logo" class="logo">
 
 <div class="nav">
-<a href="index.html"><i class="ri-dashboard-line"></i> Dashboard</a>
-<a href="challenges.html"><i class="ri-gamepad-line"></i> Challenges</a>
-<a href="submit.html"><i class="ri-upload-line"></i> Submit</a>
-<a href="about.html"><i class="ri-information-line"></i> About</a>
-<a href="how.html"><i class="ri-question-line"></i> How</a>
+<a href="index.html"><i class="ri-dashboard-line"></i><span>Dashboard</span></a>
+<a href="challenges.html"><i class="ri-gamepad-line"></i><span>Challenges</span></a>
+<a href="submit.html"><i class="ri-upload-line"></i><span>Submit</span></a>
+<a href="about.html"><i class="ri-information-line"></i><span>About</span></a>
+<a href="how.html"><i class="ri-question-line"></i><span>How</span></a>
 </div>
 
 </div>
@@ -40,10 +39,12 @@
 <i class="ri-menu-line"></i>
 </button>
 
-<input class="search" placeholder="Search games...">
+<div class="search-box" id="searchBox">
+<input placeholder="Search categories...">
+</div>
 
 <div class="top-icons">
-<i class="ri-search-line"></i>
+<i class="ri-search-line" onclick="toggleSearch()"></i>
 <i class="ri-user-line"></i>
 <i class="ri-notification-3-line"></i>
 <i class="ri-message-3-line"></i>
@@ -55,14 +56,19 @@
 
 <h1>Dashboard</h1>
 
+<!-- VIP -->
 <div class="vip-box">
 <div>
 <h3>VIP Progress</h3>
-<p id="vipText">0%</p>
+<div class="progress-bar">
+<div class="progress-fill" style="width:0%"></div>
 </div>
-<div class="vip-icon"></div>
+<p>0%</p>
+</div>
+<div class="vip-badge"></div>
 </div>
 
+<!-- CHALLENGES -->
 <h2>Live Challenges</h2>
 
 <div class="cards">
@@ -99,15 +105,12 @@
 
 <!-- CHAT -->
 <div class="chat" id="chat">
-
 <div class="chat-header">
 Support
 <span onclick="toggleChat()">✖</span>
 </div>
 
-<div class="chat-status" id="chatStatus">
-Status: Offline
-</div>
+<div class="chat-status" id="chatStatus"></div>
 
 <div class="chat-messages" id="chatMessages"></div>
 
@@ -115,7 +118,6 @@ Status: Offline
 <input id="msgInput" placeholder="Type message...">
 <button onclick="sendMsg()">Send</button>
 </div>
-
 </div>
 
 </body>
