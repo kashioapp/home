@@ -1,78 +1,132 @@
-/* SEARCH HIDDEN BY DEFAULT */
-.search-box {
-display:none;
+body {
+margin:0;
+font-family:Arial;
+background:#0b0f14;
+color:white;
 }
 
-.search-box.active {
-display:block;
-position:absolute;
-top:70px;
-left:50%;
-transform:translateX(-50%);
-background:#111;
-padding:15px;
-border-radius:10px;
+/* SIDEBAR */
+.sidebar {
+width:220px;
+height:100vh;
+background:#0f141a;
+position:fixed;
+padding:20px;
+transition:.3s;
 }
 
-/* SIDEBAR COLLAPSE */
 .sidebar.collapsed {
 width:70px;
+}
+
+.sidebar img {
+width:140px;
+transition:.3s;
+}
+
+.sidebar.collapsed img {
+width:40px;
+}
+
+.sidebar ul {
+list-style:none;
+padding:0;
+}
+
+.sidebar li {
+margin:15px 0;
+cursor:pointer;
 }
 
 .sidebar.collapsed span {
 display:none;
 }
 
-.sidebar.collapsed .logo {
-width:40px;
+/* TOPBAR */
+.topbar {
+margin-left:220px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+background:#0f141a;
 }
 
-/* DASHBOARD ADDITIONS */
+.search-container input {
+display:none;
+padding:8px;
+border-radius:5px;
+border:none;
+}
+
+.search-container.active input {
+display:block;
+}
+
+/* MAIN */
+.main {
+margin-left:220px;
+padding:20px;
+}
+
+/* CARDS */
+.card {
+background:#151a20;
+padding:20px;
+border-radius:10px;
+margin:10px;
+}
+
+.cards {
+display:flex;
+}
+
 .stats {
 display:flex;
-gap:20px;
-margin-bottom:20px;
 }
 
-.stat {
-background:#151515;
-padding:15px;
+/* VIP */
+.bar {
+height:8px;
+background:#222;
 border-radius:10px;
-width:150px;
 }
 
-.stat h4 {
-margin:0;
-color:#aaa;
+.fill {
+height:100%;
+width:0%;
+background:#00ffae;
 }
 
-.stat p {
-margin:5px 0 0;
-font-size:18px;
-}
-
-/* TRENDING */
-.trending {
-margin-top:30px;
-}
-
-.trending-row {
+/* SCROLL */
+.scroll {
 display:flex;
-gap:15px;
 overflow-x:auto;
 }
 
-.trending-card {
-min-width:150px;
-background:#1a1a1a;
+/* SUPPORT */
+.support-btn {
+position:fixed;
+bottom:20px;
+right:20px;
+background:#00ffae;
 padding:15px;
-border-radius:10px;
+border-radius:50%;
+cursor:pointer;
 }
 
-/* ACTIVITY */
-.activity {
-margin-top:30px;
-background:#151515;
-padding:20px;
+.chat {
+display:none;
+position:fixed;
+bottom:80px;
+right:20px;
+background:#111;
+padding:15px;
 border-radius:10px;
+width:250px;
+}
+
+.chat.open {
+display:block;
 }
