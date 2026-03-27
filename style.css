@@ -5,6 +5,11 @@ background:#0b0f14;
 color:white;
 }
 
+/* LAYOUT */
+.app {
+display:flex;
+}
+
 /* SIDEBAR */
 .sidebar {
 width:230px;
@@ -25,6 +30,7 @@ display:none;
 
 .logo {
 width:150px;
+margin-bottom:20px;
 transition:0.3s;
 }
 
@@ -40,6 +46,11 @@ gap:10px;
 margin:15px 0;
 color:#aaa;
 text-decoration:none;
+}
+
+/* MAIN */
+.main {
+flex:1;
 }
 
 /* TOPBAR */
@@ -91,6 +102,7 @@ padding:30px;
 .vip-box {
 display:flex;
 justify-content:space-between;
+align-items:center;
 background:#151515;
 padding:25px;
 border-radius:12px;
@@ -111,34 +123,52 @@ background:#00ff99;
 border-radius:5px;
 }
 
+.progress-text {
+margin-top:8px;
+font-size:14px;
+color:#aaa;
+}
+
 /* CARDS */
 .cards {
 display:flex;
 gap:20px;
+flex-wrap:wrap;
 }
 
 .card {
 background:#1a1a1a;
 padding:20px;
 border-radius:12px;
-width:200px;
+width:220px;
 transition:0.3s;
 }
 
 .card:hover {
 transform:translateY(-5px);
-box-shadow:0 0 20px #00ff99;
+box-shadow:0 0 15px #00ff99;
 }
 
-.card button {
+.card-top {
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+.entry {
+font-size:12px;
+color:#aaa;
+}
+
+.join-btn {
 background:#00ff99;
 border:none;
 padding:10px;
+border-radius:6px;
 cursor:pointer;
-margin-top:10px;
 }
 
-/* CHAT BUTTON FIX */
+/* CHAT BUTTON */
 .chat-btn {
 position:fixed;
 bottom:20px;
@@ -189,4 +219,22 @@ color:#aaa;
 height:200px;
 overflow:auto;
 padding:10px;
+}
+
+.chat-input {
+display:flex;
+}
+
+.chat-input input {
+flex:1;
+padding:10px;
+background:#222;
+border:none;
+color:white;
+}
+
+.chat-input button {
+padding:10px;
+background:#00ff99;
+border:none;
 }
