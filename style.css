@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial;
-    background: #0a0a0a;
+    background: radial-gradient(circle at top right, #0f2f1f, #050505);
     color: white;
 }
 
@@ -9,8 +9,8 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background: rgba(255,255,255,0.05);
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.6);
 }
 
 .logo {
@@ -18,9 +18,13 @@ nav {
 }
 
 .nav-links a {
-    color: white;
-    margin-left: 20px;
+    color: #ccc;
+    margin-left: 25px;
     text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #22c55e;
 }
 
 /* HERO */
@@ -30,44 +34,36 @@ nav {
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 55px;
 }
 
 .hero button {
-    padding: 12px 24px;
+    margin-top: 20px;
+    padding: 14px 28px;
     background: #22c55e;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 0 20px #22c55e;
-    cursor: pointer;
+    box-shadow: 0 0 25px #22c55e;
 }
 
 /* CARDS */
 .cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     padding: 60px;
 }
 
 .card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
+    background: #111;
     border-radius: 12px;
-    width: 200px;
+    padding: 25px;
+    width: 220px;
     text-align: center;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #22c55e;
-}
-
-.card button {
-    background: #22c55e;
-    border: none;
-    padding: 8px 16px;
-    margin-top: 10px;
-    border-radius: 8px;
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px #22c55e;
 }
