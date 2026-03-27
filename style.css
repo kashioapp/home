@@ -6,7 +6,7 @@ color:white;
 }
 
 /* LAYOUT */
-.app {
+.layout {
 display:flex;
 }
 
@@ -16,32 +16,15 @@ width:230px;
 background:#111;
 height:100vh;
 padding:20px;
-transition:0.3s;
-overflow:hidden;
-}
-
-.sidebar.collapsed {
-width:70px;
-}
-
-.sidebar.collapsed span {
-display:none;
 }
 
 .logo {
 width:150px;
 margin-bottom:20px;
-transition:0.3s;
 }
 
-.sidebar.collapsed .logo {
-width:40px;
-}
-
-/* NAV */
 .nav a {
 display:flex;
-align-items:center;
 gap:10px;
 margin:15px 0;
 color:#aaa;
@@ -56,8 +39,8 @@ flex:1;
 /* TOPBAR */
 .topbar {
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 padding:15px;
 background:#111;
 }
@@ -70,105 +53,58 @@ font-size:20px;
 cursor:pointer;
 }
 
-.search-box {
-display:none;
-}
-
-.search-box.active {
-display:block;
-}
-
-.search-box input {
-padding:10px;
-background:#1a1a1a;
-border:none;
-color:white;
-border-radius:8px;
-}
-
-.top-icons i {
+.icons i {
 margin-left:15px;
 cursor:pointer;
-font-size:20px;
-color:#aaa;
 }
 
-/* CONTENT */
+/* CONTENT FIX (IMPORTANT) */
 .content {
 padding:30px;
+display:block;
+width:100%;
 }
 
 /* VIP */
-.vip-box {
-display:flex;
-justify-content:space-between;
-align-items:center;
+.vip {
 background:#151515;
-padding:25px;
-border-radius:12px;
-margin-bottom:30px;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
 }
 
-.progress-bar {
-width:200px;
+.bar {
 height:8px;
 background:#333;
-border-radius:5px;
 margin-top:10px;
 }
 
-.progress-fill {
+.fill {
 height:100%;
 background:#00ff99;
-border-radius:5px;
-}
-
-.progress-text {
-margin-top:8px;
-font-size:14px;
-color:#aaa;
 }
 
 /* CARDS */
 .cards {
 display:flex;
 gap:20px;
-flex-wrap:wrap;
 }
 
 .card {
 background:#1a1a1a;
 padding:20px;
-border-radius:12px;
-width:220px;
-transition:0.3s;
+border-radius:10px;
+width:200px;
 }
 
-.card:hover {
-transform:translateY(-5px);
-box-shadow:0 0 15px #00ff99;
-}
-
-.card-top {
-display:flex;
-justify-content:space-between;
-margin-bottom:10px;
-}
-
-.entry {
-font-size:12px;
-color:#aaa;
-}
-
-.join-btn {
+.card button {
+margin-top:10px;
 background:#00ff99;
 border:none;
 padding:10px;
-border-radius:6px;
-cursor:pointer;
 }
 
-/* CHAT BUTTON */
+/* CHAT */
 .chat-btn {
 position:fixed;
 bottom:20px;
@@ -182,59 +118,15 @@ align-items:center;
 justify-content:center;
 }
 
-.chat-btn i {
-font-size:24px;
-}
-
-/* CHAT */
 .chat {
 display:none;
 position:fixed;
 bottom:90px;
 right:20px;
-width:320px;
+width:300px;
 background:#111;
-border-radius:12px;
-overflow:hidden;
 }
 
 .chat.open {
 display:block;
-}
-
-.chat-header {
-padding:10px;
-background:#1a1a1a;
-display:flex;
-justify-content:space-between;
-}
-
-.chat-status {
-padding:8px;
-font-size:12px;
-color:#aaa;
-}
-
-.chat-messages {
-height:200px;
-overflow:auto;
-padding:10px;
-}
-
-.chat-input {
-display:flex;
-}
-
-.chat-input input {
-flex:1;
-padding:10px;
-background:#222;
-border:none;
-color:white;
-}
-
-.chat-input button {
-padding:10px;
-background:#00ff99;
-border:none;
 }
