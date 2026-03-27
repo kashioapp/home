@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial;
-    background: black;
     color: white;
+    background: radial-gradient(circle at top right, #00ff99 0%, #000 40%);
 }
 
 /* LOADER */
@@ -19,13 +19,12 @@ body {
 
 #loader img {
     width: 180px;
-    animation: pulse 1.5s infinite;
+    animation: glow 1.5s infinite alternate;
 }
 
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
+@keyframes glow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
 
 /* NAV */
@@ -35,15 +34,12 @@ nav {
     padding: 20px;
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.4);
-}
-
-.logo {
-    height: 40px;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
 .nav-links a {
-    margin-left: 20px;
+    margin-left: 15px;
     text-decoration: none;
     color: white;
 }
@@ -51,25 +47,34 @@ nav {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 200px 20px;
+    padding: 180px 20px;
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 64px;
+    background: linear-gradient(90deg, #00ff99, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+/* BUTTON */
 .main-btn {
-    background: #00ff99;
+    background: linear-gradient(90deg, #00ff99, #00ccff);
     border: none;
-    padding: 12px 25px;
-    margin-top: 20px;
-    border-radius: 8px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.1);
 }
 
 /* SECTION */
 .section {
-    text-align: center;
     padding: 80px 20px;
+    text-align: center;
 }
 
 /* CARDS */
@@ -77,30 +82,46 @@ nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
     background: #111;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ff99;
 }
 
 /* VIP */
-.vip-box {
-    max-width: 400px;
-    margin: auto;
-}
-
 .vip-bar {
     background: #222;
     height: 10px;
     border-radius: 10px;
+    width: 300px;
+    margin: auto;
 }
 
 .vip-fill {
-    width: 32%;
+    width: 0%;
     height: 100%;
     background: #00ff99;
+}
+
+/* PROMO */
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    margin-left: 10px;
+    padding: 10px 15px;
 }
 
 /* CHAT */
@@ -109,18 +130,40 @@ nav {
     bottom: 20px;
     right: 20px;
     background: #00ff99;
-    padding: 15px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
 #chatBox {
-    display: none;
     position: fixed;
-    bottom: 80px;
+    bottom: 90px;
     right: 20px;
+    width: 300px;
     background: #111;
+    border-radius: 12px;
+    display: none;
     padding: 15px;
-    border-radius: 10px;
-    width: 200px;
+}
+
+#chatBox.open {
+    display: block;
+}
+
+#chatMessages {
+    height: 150px;
+    overflow-y: auto;
+}
+
+.user-msg {
+    background: #00ff99;
+    color: black;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 5px;
 }
