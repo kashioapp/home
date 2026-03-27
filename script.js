@@ -5,30 +5,32 @@ const logo = document.getElementById("logo");
 sidebar.classList.toggle("collapsed");
 
 if(sidebar.classList.contains("collapsed")){
-logo.src="favicon.png";
+logo.src = "./favicon.png";
 } else {
-logo.src="bannerlogo.png";
+logo.src = "./bannerlogo.png";
 }
 }
 
-/* SEARCH */
 function toggleSearch(){
-document.querySelector(".search-container").classList.toggle("active");
+document.getElementById("searchWrap").classList.toggle("active");
 }
 
-/* CHAT */
 function toggleChat(){
 document.getElementById("chat").classList.toggle("open");
 }
 
-/* SEND MESSAGE */
 function sendMsg(){
-const input = document.getElementById("msgInput");
+let input = document.getElementById("msg");
 if(!input.value) return;
 
-const msg = document.createElement("div");
-msg.innerText = input.value;
+let div = document.createElement("div");
+div.innerText = input.value;
 
-document.getElementById("chatMessages").appendChild(msg);
+document.getElementById("messages").appendChild(div);
+
 input.value="";
+}
+
+function go(page){
+window.location.href = page;
 }
