@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="./style.css">
 <script src="./script.js" defer></script>
 
+<!-- ICONS -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -19,11 +22,11 @@
 <img src="./bannerlogo.png" class="logo">
 
 <div class="nav">
-<a href="#">Dashboard</a>
-<a href="#">Challenges</a>
-<a href="#">Submit</a>
-<a href="#">About</a>
-<a href="#">How</a>
+<a href="index.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+<a href="challenges.html"><i class="ri-gamepad-line"></i> Challenges</a>
+<a href="submit.html"><i class="ri-upload-line"></i> Submit</a>
+<a href="about.html"><i class="ri-information-line"></i> About</a>
+<a href="how.html"><i class="ri-question-line"></i> How</a>
 </div>
 
 </div>
@@ -31,23 +34,23 @@
 <!-- MAIN -->
 <div class="main">
 
-<!-- TOPBAR -->
 <div class="topbar">
 
-<button onclick="toggleSidebar()" class="menu">☰</button>
+<button onclick="toggleSidebar()" class="menu">
+<i class="ri-menu-line"></i>
+</button>
 
 <input class="search" placeholder="Search games...">
 
 <div class="top-icons">
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
-<div class="circle"></div>
+<i class="ri-search-line"></i>
+<i class="ri-user-line"></i>
+<i class="ri-notification-3-line"></i>
+<i class="ri-message-3-line"></i>
 </div>
 
 </div>
 
-<!-- CONTENT -->
 <div class="content">
 
 <h1>Dashboard</h1>
@@ -90,7 +93,9 @@
 </div>
 
 <!-- CHAT BUTTON -->
-<div class="chat-btn" onclick="toggleChat()"></div>
+<div class="chat-btn" onclick="toggleChat()">
+<i class="ri-customer-service-2-line"></i>
+</div>
 
 <!-- CHAT -->
 <div class="chat" id="chat">
