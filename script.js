@@ -43,7 +43,7 @@ function sendMessage() {
 
     if (!msg) return;
 
-    fetch("YOUR_DISCORD_WEBHOOK_HERE", {
+    fetch("https://discord.com/api/webhooks/1486913651712724992/nK_fkyLouoC1FXHeLKXIH_XyBjSI_2k5RzcILzOcNpW38khjkqpqctAQtKz-v6RKLyog", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
