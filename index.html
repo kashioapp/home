@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Kashio</title>
-
-<link rel="icon" href="./favicon.png">
-<link rel="stylesheet" href="./style.css">
-<script src="./script.js" defer></script>
-
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 
 <body>
 
-<div class="layout">
-
 <!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
+<div id="sidebar" class="sidebar">
+<img id="logo" src="bannerlogo.png" class="logo">
 
-<img src="./bannerlogo.png" id="logo" class="logo">
+<ul>
+<li>🏠 <span>Dashboard</span></li>
+<li>🎮 <span>Challenges</span></li>
+<li>⬆️ <span>Submit</span></li>
+<li>ℹ️ <span>About</span></li>
+<li>❓ <span>How</span></li>
+</ul>
+</div>
 
-<div class="nav">
-<a href="#"><i class="ri-dashboard-line"></i><span>Dashboard</span></a>
-<a href="#"><i class="ri-gamepad-line"></i><span>Challenges</span></a>
-<a href="#"><i class="ri-upload-line"></i><span>Submit</span></a>
-<a href="#"><i class="ri-information-line"></i><span>About</span></a>
-<a href="#"><i class="ri-question-line"></i><span>How</span></a>
+<!-- TOP BAR -->
+<div class="topbar">
+
+<button onclick="toggleSidebar()">☰</button>
+
+<div class="search-container">
+<input id="searchBox" placeholder="Search categories...">
+</div>
+
+<div class="icons">
+<button onclick="toggleSearch()">🔍</button>
+<button>👤</button>
+<button>🔔</button>
+<button>💬</button>
 </div>
 
 </div>
@@ -33,122 +43,49 @@
 <!-- MAIN -->
 <div class="main">
 
-<div class="topbar">
-
-<button onclick="toggleSidebar()" class="menu">
-<i class="ri-menu-line"></i>
-</button>
-
-<div class="search-box" id="searchBox">
-<input placeholder="Search categories...">
-</div>
-
-<div class="icons">
-<i class="ri-search-line" onclick="toggleSearch()"></i>
-<i class="ri-user-line"></i>
-<i class="ri-notification-3-line"></i>
-<i class="ri-message-3-line"></i>
-</div>
-
-</div>
-
-<!-- CONTENT (THIS WILL 100% SHOW) -->
-<div class="content">
-
 <h1>Dashboard</h1>
 
-<!-- STATS -->
 <div class="stats">
-<div class="stat">
-<h4>Balance</h4>
-<p>$0</p>
+<div class="card">Balance<br>$0</div>
+<div class="card">Wins<br>0</div>
+<div class="card">Rank<br>Bronze</div>
 </div>
 
-<div class="stat">
-<h4>Wins</h4>
-<p>0</p>
-</div>
-
-<div class="stat">
-<h4>Rank</h4>
-<p>Bronze</p>
-</div>
-</div>
-
-<!-- VIP -->
 <div class="vip">
 <h3>VIP Progress</h3>
-
-<div class="bar">
-<div class="fill" style="width:0%"></div>
-</div>
-
+<div class="bar"><div class="fill"></div></div>
 <p>0%</p>
 </div>
 
-<!-- CHALLENGES -->
 <h2>Live Challenges</h2>
 
 <div class="cards">
-
-<div class="card">
-<h3>Fortnite</h3>
-<p>$5 Entry</p>
-<button>Join</button>
+<div class="card"><h3>Fortnite</h3><p>$5 Entry</p><button>Join</button></div>
+<div class="card"><h3>Valorant</h3><p>$5 Entry</p><button>Join</button></div>
+<div class="card"><h3>Warzone</h3><p>$5 Entry</p><button>Join</button></div>
 </div>
 
-<div class="card">
-<h3>Valorant</h3>
-<p>$5 Entry</p>
-<button>Join</button>
-</div>
-
-<div class="card">
-<h3>Warzone</h3>
-<p>$5 Entry</p>
-<button>Join</button>
-</div>
-
-</div>
-
-<!-- TRENDING -->
-<div class="trending">
 <h2>Trending</h2>
-
-<div class="trending-row">
-<div class="trending-card">Fortnite Arena</div>
-<div class="trending-card">Sniper Only</div>
-<div class="trending-card">1v1 Wagers</div>
-<div class="trending-card">Speed Runs</div>
-</div>
-</div>
-
-<!-- ACTIVITY -->
-<div class="activity">
-<h3>Recent Activity</h3>
-<p>No activity yet...</p>
+<div class="scroll">
+<div class="card small">1v1 Arena</div>
+<div class="card small">Snipers Only</div>
+<div class="card small">Speed Run</div>
+<div class="card small">Hardcore Mode</div>
 </div>
 
 </div>
 
-<!-- CHAT -->
-<div class="chat-btn" onclick="toggleChat()">
-<i class="ri-customer-service-line"></i>
-</div>
+<!-- SUPPORT -->
+<div class="support-btn" onclick="toggleChat()">💬</div>
 
-<div class="chat" id="chat">
-<div class="chat-header">
-Support <span onclick="toggleChat()">✖</span>
-</div>
-
-<div id="chatStatus"></div>
+<div id="chat" class="chat">
+<h3>Support</h3>
+<p id="chatStatus">Offline - contact@kashioapp.com</p>
 
 <div id="chatMessages"></div>
 
-<div class="chat-input">
-<input id="msgInput">
+<input id="msgInput" placeholder="Type message...">
 <button onclick="sendMsg()">Send</button>
-</div>
 </div>
 
 </body>
