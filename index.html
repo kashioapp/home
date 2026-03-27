@@ -18,66 +18,65 @@
 
 <img src="./bannerlogo.png" class="logo">
 
-<a href="index.html">Dashboard</a>
-<a href="challenges.html">Challenges</a>
-<a href="submit.html">Submit</a>
-<a href="about.html">About</a>
-<a href="how.html">How</a>
+<div class="nav">
+<a href="#">Dashboard</a>
+<a href="#">Challenges</a>
+<a href="#">Submit</a>
+<a href="#">About</a>
+<a href="#">How</a>
+</div>
 
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
+<!-- TOPBAR -->
 <div class="topbar">
 
-<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+<button onclick="toggleSidebar()" class="menu">☰</button>
 
-<div class="top-right">
+<input class="search" placeholder="Search games...">
 
-<div class="search-box">
-<input placeholder="Search...">
-</div>
-
-<div class="icon-btn"></div>
-<div class="icon-btn"></div>
-<div class="icon-btn"></div>
-<div class="icon-btn"></div>
-
+<div class="top-icons">
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
 </div>
 
 </div>
 
+<!-- CONTENT -->
 <div class="content">
 
 <h1>Dashboard</h1>
 
-<!-- VIP CARD -->
-<div class="vip-card">
+<div class="vip-box">
 <div>
 <h3>VIP Progress</h3>
-<p>0%</p>
+<p id="vipText">0%</p>
 </div>
-<div class="vip-star"></div>
+<div class="vip-icon"></div>
 </div>
 
 <h2>Live Challenges</h2>
 
 <div class="cards">
 
-<div class="challenge-card">
+<div class="card">
 <h3>Fortnite</h3>
 <p>$5 Entry</p>
 <button>Join</button>
 </div>
 
-<div class="challenge-card">
+<div class="card">
 <h3>Valorant</h3>
 <p>$5 Entry</p>
 <button>Join</button>
 </div>
 
-<div class="challenge-card">
+<div class="card">
 <h3>Warzone</h3>
 <p>$5 Entry</p>
 <button>Join</button>
@@ -91,24 +90,25 @@
 </div>
 
 <!-- CHAT BUTTON -->
-<div class="chat-btn" onclick="toggleChat()">💬</div>
+<div class="chat-btn" onclick="toggleChat()"></div>
 
 <!-- CHAT -->
-<div class="chat-box" id="chatBox">
+<div class="chat" id="chat">
 
 <div class="chat-header">
 Support
 <span onclick="toggleChat()">✖</span>
 </div>
 
-<div class="chat-messages" id="chatMessages">
-<div class="bot-msg">Support is currently offline.</div>
-<div class="bot-msg">Email: contact@kashioapp.com</div>
+<div class="chat-status" id="chatStatus">
+Status: Offline
 </div>
 
+<div class="chat-messages" id="chatMessages"></div>
+
 <div class="chat-input">
-<input id="chatInput" placeholder="Type message...">
-<button onclick="sendMessage()">Send</button>
+<input id="msgInput" placeholder="Type message...">
+<button onclick="sendMsg()">Send</button>
 </div>
 
 </div>
