@@ -5,9 +5,9 @@ const logo = document.getElementById("logo");
 sidebar.classList.toggle("collapsed");
 
 if(sidebar.classList.contains("collapsed")){
-logo.src = "./favicon.png";
+logo.src="./favicon.png";
 } else {
-logo.src = "./bannerlogo.png";
+logo.src="./bannerlogo.png";
 }
 }
 
