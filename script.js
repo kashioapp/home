@@ -1,18 +1,32 @@
 function toggleSidebar(){
-document.getElementById("sidebar").classList.toggle("collapsed");
+const sidebar = document.getElementById("sidebar");
+const logo = document.getElementById("logo");
+
+sidebar.classList.toggle("collapsed");
+
+if(sidebar.classList.contains("collapsed")){
+logo.src = "./favicon.png";
+} else {
+logo.src = "./bannerlogo.png";
+}
 }
 
+/* SEARCH TOGGLE */
 function toggleSearch(){
-document.getElementById("searchBox").classList.toggle("active");
+const box = document.getElementById("searchBox");
+box.classList.toggle("active");
 }
 
+/* CHAT */
 function toggleChat(){
-document.getElementById("chat").classList.toggle("open");
+const chat = document.getElementById("chat");
+chat.classList.toggle("open");
 
 document.getElementById("chatStatus").innerText =
 "Offline - contact@kashioapp.com";
 }
 
+/* SEND */
 function sendMsg(){
 const input = document.getElementById("msgInput");
 if(!input.value) return;
