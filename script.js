@@ -1,35 +1,59 @@
+let supportOnline = false; // 🔥 CHANGE THIS
+
 function toggleSidebar(){
 document.getElementById("sidebar").classList.toggle("collapsed");
 }
 
 function toggleChat(){
-document.getElementById("chatBox").classList.toggle("open");
+document.getElementById("chat").classList.toggle("open");
+updateStatus();
 }
 
-function sendMessage(){
+function updateStatus(){
+const status = document.getElementById("chatStatus");
 
-const input = document.getElementById("chatInput");
-const msg = input.value;
+if(supportOnline){
+status.innerText = "Status: Online";
+} else {
+status.innerText = "Status: Offline (contact@kashioapp.com)";
+}
+}
 
-if(!msg) return;
+function sendMsg(){
 
-const chat = document.getElementById("chatMessages");
+const input = document.getElementById("msgInput");
+const text = input.value;
+if(!text) return;
 
-/* show message */
-const div = document.createElement("div");
-div.className = "user-msg";
-div.innerText = msg;
-chat.appendChild(div);
+const box = document.getElementById("chatMessages");
 
-/* send to webhook */
-fetch("https://discord.com/api/webhooks/1486913651712724992/nK_fkyLouoC1FXHeLKXIH_XyBjSI_2k5RzcILzOcNpW38khjkqpqctAQtKz-v6RKLyog", {
+/* USER MSG */
+const msg = document.createElement("div");
+msg.className = "msg-user";
+msg.innerText = text;
+box.appendChild(msg);
+
+/* SEND TO DISCORD */
+fetch("YOUR_WEBHOOK_HERE", {
 method:"POST",
 headers:{"Content-Type":"application/json"},
 body:JSON.stringify({
-content: "Support Message: " + msg
+content:"Support Message: " + text
 })
 });
 
+/* AUTO RESPONSE */
+const bot = document.createElement("div");
+bot.className = "msg-bot";
+
+if(supportOnline){
+bot.innerText = "Support will reply soon.";
+} else {
+bot.innerText = "Support offline. Email contact@kashioapp.com";
+}
+
+box.appendChild(bot);
+
 input.value = "";
-chat.scrollTop = chat.scrollHeight;
+box.scrollTop = box.scrollHeight;
 }
