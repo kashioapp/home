@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Submit Results</title>
-
-<base href="/home/">
-
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Submit - Kashio</title>
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo-area">
-        <img src="bannerlogo.png">
-    </div>
+<div class="app">
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="how.html">How It Works</a>
-        <a href="challenges.html">Challenges</a>
-        <a href="submit.html">Submit</a>
-    </div>
-</nav>
+<div class="sidebar">
+<h2>Kashio</h2>
+<a href="index.html">Dashboard</a>
+<a href="challenges.html">Challenges</a>
+<a href="submit.html">Submit</a>
+<a href="about.html">About</a>
+<a href="how.html">How</a>
+</div>
 
-<section class="section">
-    <h1>Submit Your Results</h1>
-    <p>Upload proof of your gameplay and get ranked.</p>
+<div class="main">
 
-    <div class="card" style="max-width:400px;margin:auto;">
-        <p>Coming soon: upload system</p>
-        <button>Submit Proof</button>
-    </div>
-</section>
+<div class="topbar">
+<button onclick="toggleSidebar()">☰</button>
+<div>
+<span class="icon">🔍</span>
+<span class="icon">👤</span>
+<span class="icon">🔔</span>
+<span class="icon">💬</span>
+</div>
+</div>
+
+<div style="padding:20px">
+
+<h1>Submit Results</h1>
+
+<div class="card">
+<p>Upload proof (coming soon)</p>
+<button>Submit Proof</button>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<div class="chat-box">
+<h3>Support</h3>
+<input id="chatInput">
+<button onclick="sendMessage()">Send</button>
+</div>
 
 </body>
 </html>
