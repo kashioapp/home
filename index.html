@@ -11,14 +11,12 @@
 
 <body>
 
-<!-- LOADER -->
 <div id="loader">
     <img src="bannerlogo.png">
 </div>
 
-<!-- NAV -->
 <nav>
-    <img src="bannerlogo.png" class="logo">
+    <img src="bannerlogo.png" height="40">
 
     <div class="nav-links">
         <a href="index.html">Home</a>
@@ -29,67 +27,44 @@
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
     <h1>Compete. Win. Dominate.</h1>
     <p>24/7 skill-based gaming challenges</p>
     <button class="main-btn">Start Playing</button>
 </section>
 
-<!-- VIP -->
 <section class="section">
     <h2>Your VIP Progress</h2>
-
-    <div class="vip-box">
-        <p><b>Level:</b> Bronze</p>
-        <div class="vip-bar">
-            <div class="vip-fill"></div>
-        </div>
-        <p>Progress: 32%</p>
+    <div class="vip-bar">
+        <div class="vip-fill"></div>
     </div>
+    <p>Progress: 0%</p>
 </section>
 
-<!-- CHALLENGES -->
 <section class="section">
     <h2>Live Challenges</h2>
 
     <div class="cards">
-        <div class="card">
-            <h3>Fortnite</h3>
-            <p>$5 Entry</p>
-            <button>Join</button>
-        </div>
-
-        <div class="card">
-            <h3>Valorant</h3>
-            <p>$5 Entry</p>
-            <button>Join</button>
-        </div>
-
-        <div class="card">
-            <h3>Warzone</h3>
-            <p>$5 Entry</p>
-            <button>Join</button>
-        </div>
+        <div class="card"><h3>Fortnite</h3><p>$5</p><button>Join</button></div>
+        <div class="card"><h3>Valorant</h3><p>$5</p><button>Join</button></div>
+        <div class="card"><h3>Warzone</h3><p>$5</p><button>Join</button></div>
     </div>
 </section>
 
-<!-- PROMO -->
 <section class="section">
     <h2>Promo Code</h2>
-
-    <input id="promoInput" placeholder="Enter code">
+    <input id="promoInput">
     <button onclick="redeemCode()">Redeem</button>
     <p id="promoResult"></p>
 </section>
 
-<!-- CHAT -->
 <div class="chat-btn" onclick="toggleChat()">💬</div>
 
 <div id="chatBox">
     <h3>Support</h3>
-    <p>Live support offline.</p>
-    <p>Email: contact@kashioapp.com</p>
+    <div id="chatMessages"></div>
+    <input id="chatInput" placeholder="Type message...">
+    <button onclick="sendMessage()">Send</button>
 </div>
 
 <script src="script.js"></script>
