@@ -1,61 +1,133 @@
 body {
 margin:0;
-font-family: Arial;
 background:#0b0f14;
 color:white;
+font-family:Arial;
 }
 
+/* LAYOUT */
 .app {
 display:flex;
 }
 
+/* SIDEBAR */
 .sidebar {
-width:220px;
+width:230px;
 background:#111;
 height:100vh;
 padding:20px;
+transition:0.3s;
+}
+
+.sidebar.collapsed {
+width:60px;
+}
+
+.logo {
+width:150px;
+margin-bottom:20px;
 }
 
 .sidebar a {
 display:block;
-margin:10px 0;
 color:#aaa;
+margin:12px 0;
 text-decoration:none;
 }
 
+/* MAIN */
 .main {
 flex:1;
 }
 
+/* TOPBAR */
 .topbar {
-background:#111;
-padding:15px;
 display:flex;
 justify-content:space-between;
+align-items:center;
+padding:15px;
+background:#111;
 }
 
+.menu-btn {
+background:none;
+border:none;
+color:white;
+font-size:20px;
+cursor:pointer;
+}
+
+.top-right {
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.search-box input {
+background:#1a1a1a;
+border:none;
+padding:8px;
+border-radius:5px;
+color:white;
+}
+
+.icon-btn {
+width:30px;
+height:30px;
+background:#1a1a1a;
+border-radius:50%;
+}
+
+/* CONTENT */
 .content {
-padding:20px;
+padding:25px;
 }
 
-.grid {
+/* VIP */
+.vip-card {
+display:flex;
+justify-content:space-between;
+background:#151515;
+padding:25px;
+border-radius:12px;
+margin-bottom:30px;
+}
+
+.vip-star {
+width:50px;
+height:50px;
+background:gold;
+border-radius:10px;
+}
+
+/* CARDS */
+.cards {
 display:flex;
 gap:20px;
 }
 
-.card {
+.challenge-card {
 background:#1a1a1a;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
+width:180px;
 }
 
+.challenge-card button {
+background:#00ff99;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+/* CHAT */
 .chat-btn {
 position:fixed;
 bottom:20px;
 right:20px;
-background:#00ff99;
 width:60px;
 height:60px;
+background:#00ff99;
 border-radius:50%;
 display:flex;
 align-items:center;
@@ -68,11 +140,56 @@ display:none;
 position:fixed;
 bottom:90px;
 right:20px;
+width:300px;
 background:#111;
-padding:15px;
-border-radius:10px;
+border-radius:12px;
+overflow:hidden;
 }
 
 .chat-box.open {
 display:block;
+}
+
+.chat-header {
+padding:10px;
+background:#1a1a1a;
+display:flex;
+justify-content:space-between;
+}
+
+.chat-messages {
+height:200px;
+overflow:auto;
+padding:10px;
+}
+
+.bot-msg {
+background:#1a1a1a;
+padding:8px;
+margin:5px 0;
+border-radius:6px;
+}
+
+.user-msg {
+background:#00ff99;
+padding:8px;
+margin:5px 0;
+border-radius:6px;
+color:black;
+}
+
+.chat-input {
+display:flex;
+}
+
+.chat-input input {
+flex:1;
+padding:10px;
+border:none;
+}
+
+.chat-input button {
+padding:10px;
+background:#00ff99;
+border:none;
 }
