@@ -3,39 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Kashio</title>
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
+
+<link rel="stylesheet" href="./style.css">
+<script defer src="./script.js"></script>
+
 </head>
 
 <body>
 
 <!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
-<img id="logo" src="bannerlogo.png" class="logo">
+    <img id="logo" src="./bannerlogo.png" class="logo">
 
-<ul>
-<li>🏠 <span>Dashboard</span></li>
-<li>🎮 <span>Challenges</span></li>
-<li>⬆️ <span>Submit</span></li>
-<li>ℹ️ <span>About</span></li>
-<li>❓ <span>How</span></li>
-</ul>
+    <ul>
+        <li onclick="go('index.html')">Dashboard</li>
+        <li onclick="go('challenges.html')">Challenges</li>
+        <li onclick="go('submit.html')">Submit</li>
+        <li onclick="go('about.html')">About</li>
+        <li onclick="go('how.html')">How</li>
+    </ul>
 </div>
 
 <!-- TOP BAR -->
 <div class="topbar">
 
-<button onclick="toggleSidebar()">☰</button>
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
-<div class="search-container">
-<input id="searchBox" placeholder="Search categories...">
+<div id="searchWrap" class="search-wrap">
+    <input id="searchBox" placeholder="Search categories...">
 </div>
 
-<div class="icons">
-<button onclick="toggleSearch()">🔍</button>
-<button>👤</button>
-<button>🔔</button>
-<button>💬</button>
+<div class="top-icons">
+    <button onclick="toggleSearch()">Search</button>
+    <button>Account</button>
+    <button>Notifications</button>
+    <button>Messages</button>
 </div>
 
 </div>
@@ -46,46 +48,60 @@
 <h1>Dashboard</h1>
 
 <div class="stats">
-<div class="card">Balance<br>$0</div>
-<div class="card">Wins<br>0</div>
-<div class="card">Rank<br>Bronze</div>
+    <div class="card">Balance<br><b>$0</b></div>
+    <div class="card">Wins<br><b>0</b></div>
+    <div class="card">Rank<br><b>Bronze</b></div>
 </div>
 
 <div class="vip">
-<h3>VIP Progress</h3>
-<div class="bar"><div class="fill"></div></div>
-<p>0%</p>
+    <h3>VIP Progress</h3>
+    <div class="bar"><div class="fill"></div></div>
+    <p>0%</p>
 </div>
 
 <h2>Live Challenges</h2>
 
 <div class="cards">
-<div class="card"><h3>Fortnite</h3><p>$5 Entry</p><button>Join</button></div>
-<div class="card"><h3>Valorant</h3><p>$5 Entry</p><button>Join</button></div>
-<div class="card"><h3>Warzone</h3><p>$5 Entry</p><button>Join</button></div>
+    <div class="card game">
+        <h3>Fortnite</h3>
+        <p>$5 Entry</p>
+        <button>Join</button>
+    </div>
+
+    <div class="card game">
+        <h3>Valorant</h3>
+        <p>$5 Entry</p>
+        <button>Join</button>
+    </div>
+
+    <div class="card game">
+        <h3>Warzone</h3>
+        <p>$5 Entry</p>
+        <button>Join</button>
+    </div>
 </div>
 
 <h2>Trending</h2>
+
 <div class="scroll">
-<div class="card small">1v1 Arena</div>
-<div class="card small">Snipers Only</div>
-<div class="card small">Speed Run</div>
-<div class="card small">Hardcore Mode</div>
+    <div class="card small">Arena</div>
+    <div class="card small">Snipers</div>
+    <div class="card small">Hardcore</div>
 </div>
 
 </div>
 
 <!-- SUPPORT -->
-<div class="support-btn" onclick="toggleChat()">💬</div>
+<div class="support-btn" onclick="toggleChat()">?</div>
 
 <div id="chat" class="chat">
-<h3>Support</h3>
-<p id="chatStatus">Offline - contact@kashioapp.com</p>
+    <h3>Support</h3>
+    <p id="status">Offline - contact@kashioapp.com</p>
 
-<div id="chatMessages"></div>
+    <div id="messages"></div>
 
-<input id="msgInput" placeholder="Type message...">
-<button onclick="sendMsg()">Send</button>
+    <input id="msg" placeholder="Type message...">
+    <button onclick="sendMsg()">Send</button>
 </div>
 
 </body>
