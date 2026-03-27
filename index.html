@@ -1,10 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kashio</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js" defer></script>
+</head>
+
 <body>
 
 <div class="app">
 
 <div class="sidebar">
 <h2>Kashio</h2>
-
 <a href="index.html">Dashboard</a>
 <a href="challenges.html">Challenges</a>
 <a href="submit.html">Submit</a>
@@ -17,15 +24,15 @@
 <div class="topbar">
 <button onclick="toggleSidebar()">☰</button>
 
-<div>
-<span class="icon">🔍</span>
-<span class="icon">👤</span>
-<span class="icon">🔔</span>
-<span class="icon">💬</span>
+<div class="right-icons">
+<span>🔍</span>
+<span>👤</span>
+<span>🔔</span>
+<span>💬</span>
 </div>
 </div>
 
-<div style="padding:20px">
+<div class="content">
 
 <h1>Dashboard</h1>
 
@@ -45,15 +52,15 @@
 </div>
 
 </div>
-
 </div>
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
 
 <div class="chat-box">
 <h3>Support</h3>
-<input id="chatInput">
+<input id="chatInput" placeholder="Type message">
 <button onclick="sendMessage()">Send</button>
 </div>
 
 </body>
+</html>
