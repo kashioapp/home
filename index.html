@@ -1,73 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Kashio</title>
-
-<base href="/home/">
-
-<link rel="icon" href="favicon.png">
-<link rel="stylesheet" href="style.css">
-</head>
-
 <body>
 
-<div id="loader">
-    <img src="bannerlogo.png">
+<div class="app">
+
+<div class="sidebar">
+<h2>Kashio</h2>
+
+<a href="index.html">Dashboard</a>
+<a href="challenges.html">Challenges</a>
+<a href="submit.html">Submit</a>
+<a href="about.html">About</a>
+<a href="how.html">How</a>
 </div>
 
-<nav>
-    <img src="bannerlogo.png" height="40">
+<div class="main">
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="how.html">How It Works</a>
-        <a href="challenges.html">Challenges</a>
-        <a href="submit.html">Submit</a>
-    </div>
-</nav>
+<div class="topbar">
+<button onclick="toggleSidebar()">☰</button>
 
-<section class="hero">
-    <h1>Compete. Win. Dominate.</h1>
-    <p>24/7 skill-based gaming challenges</p>
-    <button class="main-btn">Start Playing</button>
-</section>
+<div>
+<span class="icon">🔍</span>
+<span class="icon">👤</span>
+<span class="icon">🔔</span>
+<span class="icon">💬</span>
+</div>
+</div>
 
-<section class="section">
-    <h2>Your VIP Progress</h2>
-    <div class="vip-bar">
-        <div class="vip-fill"></div>
-    </div>
-    <p>Progress: 0%</p>
-</section>
+<div style="padding:20px">
 
-<section class="section">
-    <h2>Live Challenges</h2>
+<h1>Dashboard</h1>
 
-    <div class="cards">
-        <div class="card"><h3>Fortnite</h3><p>$5</p><button>Join</button></div>
-        <div class="card"><h3>Valorant</h3><p>$5</p><button>Join</button></div>
-        <div class="card"><h3>Warzone</h3><p>$5</p><button>Join</button></div>
-    </div>
-</section>
+<div class="card">
+<h3>VIP Progress</h3>
+<p>0%</p>
+</div>
 
-<section class="section">
-    <h2>Promo Code</h2>
-    <input id="promoInput">
-    <button onclick="redeemCode()">Redeem</button>
-    <p id="promoResult"></p>
-</section>
+<h2>Live Challenges</h2>
+
+<div class="grid">
+<div class="card">Fortnite</div>
+<div class="card">Valorant</div>
+<div class="card">Warzone</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
 
-<div id="chatBox">
-    <h3>Support</h3>
-    <div id="chatMessages"></div>
-    <input id="chatInput" placeholder="Type message...">
-    <button onclick="sendMessage()">Send</button>
+<div class="chat-box">
+<h3>Support</h3>
+<input id="chatInput">
+<button onclick="sendMessage()">Send</button>
 </div>
 
-<script src="script.js"></script>
-
 </body>
-</html>
