@@ -11,20 +11,25 @@ width:220px;
 height:100vh;
 background:#0f141a;
 position:fixed;
+top:0;
+left:0;
 padding:20px;
+box-sizing:border-box;
 transition:.3s;
+z-index:100;
 }
 
 .sidebar.collapsed {
 width:70px;
 }
 
-.sidebar img {
+.logo {
 width:140px;
+margin-bottom:20px;
 transition:.3s;
 }
 
-.sidebar.collapsed img {
+.sidebar.collapsed .logo {
 width:40px;
 }
 
@@ -36,21 +41,32 @@ list-style:none;
 .sidebar li {
 margin:15px 0;
 cursor:pointer;
+color:#ccc;
 }
 
-.sidebar.collapsed li {
-font-size:0;
+.sidebar li:hover {
+color:#00ffae;
 }
 
 /* TOPBAR */
 .topbar {
-margin-left:220px;
+position:fixed;
+top:0;
+left:220px;
+right:0;
 height:60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 20px;
 background:#0f141a;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+box-sizing:border-box;
+transition:.3s;
+z-index:99;
+}
+
+.sidebar.collapsed ~ .topbar {
+left:70px;
 }
 
 .menu-btn {
@@ -58,6 +74,7 @@ background:none;
 border:none;
 color:white;
 font-size:20px;
+cursor:pointer;
 }
 
 /* SEARCH */
@@ -67,6 +84,7 @@ padding:8px;
 background:#1a1f26;
 border:none;
 color:white;
+border-radius:5px;
 }
 
 .search-wrap.active input {
@@ -76,7 +94,13 @@ display:block;
 /* MAIN */
 .main {
 margin-left:220px;
+margin-top:60px;
 padding:20px;
+transition:.3s;
+}
+
+.sidebar.collapsed ~ .main {
+margin-left:70px;
 }
 
 /* CARDS */
@@ -87,12 +111,30 @@ border-radius:10px;
 margin:10px;
 }
 
+.stat {
+width:150px;
+}
+
 .cards {
 display:flex;
+gap:15px;
+}
+
+.game {
+width:200px;
+}
+
+.join {
+background:#00ffae;
+border:none;
+padding:8px 15px;
+margin-top:10px;
+cursor:pointer;
 }
 
 .stats {
 display:flex;
+gap:15px;
 }
 
 /* VIP */
@@ -100,6 +142,7 @@ display:flex;
 height:8px;
 background:#222;
 border-radius:10px;
+margin-top:10px;
 }
 
 .fill {
@@ -111,7 +154,13 @@ background:#00ffae;
 /* SCROLL */
 .scroll {
 display:flex;
+gap:10px;
 overflow-x:auto;
+}
+
+.small {
+min-width:120px;
+text-align:center;
 }
 
 /* SUPPORT */
@@ -121,7 +170,11 @@ bottom:20px;
 right:20px;
 background:#00ffae;
 color:black;
-padding:15px;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
 border-radius:50%;
 cursor:pointer;
 }
