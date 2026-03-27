@@ -33,7 +33,7 @@ status.innerText = "Offline - contact@kashioapp.com";
 }
 }
 
-/* SEND */
+/* SEND MESSAGE */
 function sendMsg(){
 const input = document.getElementById("msgInput");
 const text = input.value;
@@ -42,7 +42,6 @@ if(!text) return;
 const box = document.getElementById("chatMessages");
 
 const msg = document.createElement("div");
-msg.className = "msg-user";
 msg.innerText = text;
 box.appendChild(msg);
 
